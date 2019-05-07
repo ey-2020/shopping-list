@@ -13,6 +13,10 @@ export class ShoppingController {
         return { data };
     }
 
+    @Post('purchased')
+    markPurchased(@Body() item: ShoppingItem) {
+        return this.service.markPurchased(item);
+    }
     @Post()
     addItem(@Body() item: CreateShoppingItem) {
         const result = this.service.add(item.description);

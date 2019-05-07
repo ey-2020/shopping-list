@@ -21,4 +21,10 @@ export class ShoppingService {
         this.items.push(newItem);
         return newItem;
     }
+
+    markPurchased(item: ShoppingItem) {
+        const storedItem = this.items.filter(i => i.id === item.id)[0];
+        storedItem.purchased = true;
+        return storedItem;
+    }
 }
